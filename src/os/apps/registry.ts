@@ -1,4 +1,4 @@
-import type { AppManifest } from "../../types/os"
+import type { AppManifest } from "../../types/os";
 
 export const appRegistry: Record<string, AppManifest> = {
   terminal: {
@@ -13,12 +13,6 @@ export const appRegistry: Record<string, AppManifest> = {
     entry: () => import("./editor/entry.tsx"),
     worker: () => new Worker(new URL("./editor/worker.ts", import.meta.url), { type: "module" }),
   },
-  explorer: {
-    id: "explorer",
-    name: "Explorer",
-    entry: () => import("./explorer/entry.tsx"),
-    worker: () => new Worker(new URL("./explorer/worker.ts", import.meta.url), { type: "module" }),
-  },
-}
+};
 
-export const appList = Object.values(appRegistry)
+export const appList = Object.values(appRegistry);

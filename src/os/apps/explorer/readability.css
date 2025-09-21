@@ -1,0 +1,74 @@
+/* src/os/apps/explorer/readability.css (strong) */
+:root{
+  --exp-fg: #eef3ff;
+  --exp-fg-dim: #c5d2ff;
+  --exp-bg: #0c1224;
+  --exp-bg-elev: #0f1733;
+  --exp-border: #1e2a52;
+  --exp-row-hover: #121c3a;
+  --exp-row-active: #172554;
+}
+
+/* ultra-broad scope with high specificity, but still limited to Explorer */
+body :where(.explorer, [data-app="explorer"], [data-app*="Explorer"], [data-window*="Explorer"], [data-title*="Explorer"]) {
+  color: var(--exp-fg) !important;
+  font: 600 14px/1.5 system-ui, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji" !important;
+  letter-spacing: .01em !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+body :where(.explorer, [data-app*="Explorer"]) .file-list,
+body :where(.explorer, [data-app*="Explorer"]) .toolbar,
+body :where(.explorer, [data-app*="Explorer"]) .sidebar,
+body :where(.explorer, [data-app*="Explorer"]) .content,
+body :where(.explorer, [data-app*="Explorer"]) .panel{
+  background: var(--exp-bg) !important;
+  border: 1px solid var(--exp-border) !important;
+  border-radius: 10px !important;
+  color: var(--exp-fg) !important;
+}
+
+body :where(.explorer, [data-app*="Explorer"]) table.file-list thead th{
+  background: #0e1731 !important;
+  color: var(--exp-fg-dim) !important;
+  font-weight: 700 !important;
+  padding: 8px 10px !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 2 !important;
+}
+
+body :where(.explorer, [data-app*="Explorer"]) table.file-list tbody td,
+body :where(.explorer, [data-app*="Explorer"]) .file-row{
+  color: var(--exp-fg) !important;
+  padding: 7px 10px !important;
+  min-height: 32px !important;
+}
+
+body :where(.explorer, [data-app*="Explorer"]) .file-name{
+  font-weight: 700 !important;
+}
+
+body :where(.explorer, [data-app*="Explorer"]) .file-row:hover,
+body :where(.explorer, [data-app*="Explorer"]) table.file-list tbody tr:hover{
+  background: var(--exp-row-hover) !important;
+}
+
+body :where(.explorer, [data-app*="Explorer"]) .file-row.is-selected,
+body :where(.explorer, [data-app*="Explorer"]) table.file-list tbody tr.is-selected{
+  background: var(--exp-row-active) !important;
+  outline: 1px solid #243a7a !important;
+}
+
+/* Inputs/Buttons */
+body :where(.explorer, [data-app*="Explorer"]) input,
+body :where(.explorer, [data-app*="Explorer"]) select,
+body :where(.explorer, [data-app*="Explorer"]) button{
+  background: #0b1122 !important;
+  color: var(--exp-fg) !important;
+  border: 1px solid var(--exp-border) !important;
+  border-radius: 8px !important;
+  padding: 6px 10px !important;
+  min-height: 30px !important;
+}
